@@ -1,7 +1,7 @@
 # A-multiple-approach-to-Analyze-Stock-Returns.
 
 ## Aim of Project
-This aim of this presentation is to guide Mr. John Hughes undertsand:
+This aim of this presentation is to guide a client undertsand:
 The effect of dividend on stock_return_scaled using a linear regression model
 The effect of return, market_overview, dividend, earnings_ranking, debt_to_equity and marketcap on stock_return_scaled using a multivariate regression model.
 Methodology
