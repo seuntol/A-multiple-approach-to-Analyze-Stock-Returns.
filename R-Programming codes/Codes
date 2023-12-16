@@ -1,1 +1,54 @@
-é
+```r
+
+# Import Stock_MLRAnalysis data set into Rstudio
+# View the Stock_MLRAnalysis data
+View(Stock_MLRAnalysis)
+
+# view structure of Stock_MLRAnalysis data
+str(Stock_MLRAnalysis)
+
+#Summary Statistics of Stock_MLRAnalysis
+summary(Stock_MLRAnalysis)
+
+# Standard Deviation of return
+SD1 <- sd(Stock_MLRAnalysis$return)
+# Standard Deviation of dividend
+SD2 <- sd(Stock_MLRAnalysis$dividend)
+# Standard Deviation of earnings_ranking
+SD3 <- sd(Stock_MLRAnalysis$earnings_ranking)
+# Standard Deviation of debt to equity
+SD4 <- sd(Stock_MLRAnalysis$debt_to_equity)
+# Standard Deviation of marketcap
+SD5 <- sd(Stock_MLRAnalysis$marketcap)
+# Standard Deviation of stock return scaled
+SD6 <- sd(Stock_MLRAnalysis$stock_return_scaled)
+
+#Calling out standard deviations value
+SD1
+SD2
+SD3
+SD4
+SD5
+SD6
+
+#Plotting Histogram of stock_return_scaled
+hist(Stock_MLRAnalysis$stock_return_scaled, freq=F,col='green',main ="Histogram showing Stock Return Scaled", xlab='Stock Return Scaled')
+lines(density(Stock_MLRAnalysis$stock_return_scaled), col="red")
+
+#One Sample t-test
+t.test(Stock_MLRAnalysis$stock_return_scaled, mu=300)
+
+#Build Linear Model
+LinearModel <-lm(stock_return_scaled~dividend, data=Stock_MLRAnalysis)
+
+#Summary of Key Statistics of the Model
+summary(LinearModel)
+
+#Build Multiple Linear Regression
+full.model <- lm(stock_return_scaled~., data = Stock_MLRAnalysis)
+
+#Summary of Key Statistics of the full model
+summary(full.model)
+
+```r
+
